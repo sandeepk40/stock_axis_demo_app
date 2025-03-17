@@ -60,12 +60,13 @@ class PricingListPage extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 15.0,right: 15,bottom: 10,top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(height: MediaQuery.of(context).size.width/34,),
+                          Visibility(
+                              visible: controller.totalPrice == 0 ? true : false,
+                              child: SizedBox(height: MediaQuery.of(context).size.width/34,)),
                           Text("Rs. ${controller.totalPrice}",
                           style: const TextStyle(color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -74,7 +75,7 @@ class PricingListPage extends StatelessWidget {
                           ),
                           const Text("Inclusive GST",
                           style: TextStyle(
-                            fontSize: 13,
+                            fontSize: 12,
                             fontWeight: FontWeight.w500,
                             color: Colors.grey
                           ),
