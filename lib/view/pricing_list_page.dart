@@ -14,15 +14,24 @@ class PricingListPage extends StatelessWidget {
       color: Colors.white,
       child: Scaffold(
         appBar: AppBar(title: const Text("Pricing",
-        style: TextStyle(color: Colors.black, fontSize: 22),
+        style: TextStyle(color: Colors.black, fontSize: 20),
         ),
         leading: const Icon(Icons.arrow_back),
         actions: [
-          IconButton(
-            onPressed: (){},
-              icon: const Icon( Icons.support_agent_sharp,
-              size: 29,
-              ))
+          Container(
+            margin: const EdgeInsets.only(right: 15),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey),
+              borderRadius: BorderRadius.circular(30)
+            ),
+            child: const Padding(
+              padding: EdgeInsets.all(5.0),
+              child: Icon( Icons.question_mark_rounded,
+                  size: 21,
+                color: Colors.grey,
+                  ),
+            ),
+          )
         ],
         ),
         body:  Column(
@@ -121,7 +130,6 @@ class PricingListPage extends StatelessWidget {
                 style: TextStyle(color: Colors.white70),
               ),
             ),
-
           ],
         ),
       ));
